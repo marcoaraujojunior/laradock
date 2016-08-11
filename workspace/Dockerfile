@@ -129,6 +129,17 @@ RUN if [ ${INSTALL_NODE} = true ]; then \
 
 #
 #--------------------------------------------------------------------------
+# Personal Vim Set Up
+#--------------------------------------------------------------------------
+#
+RUN cd ~/ && \
+    git clone https://github.com/marcoaraujojunior/dotfiles && \
+    cp ./dotfiles/.*r* ~/ && \
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim && \
+    vim +PluginInstall +qall
+
+#
+#--------------------------------------------------------------------------
 # Final Touch
 #--------------------------------------------------------------------------
 #
